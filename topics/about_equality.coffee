@@ -5,11 +5,11 @@ test "numeric equality", ->
 test "string equality", ->
   equals "3" + __, "37", "concatenate the strings"
 
-test "equality without type coercion", ->
-  ok 3 == __, "what is exactly equal to 3?"
+test "equality", ->
+  ok 3 is __, "what is exactly equal to 3?"
 
-test "equality with type coercion", ->
-  ok 3 == "__", "what string is equal to 3, with type coercion?"
+test "inequality", ->
+  ok 3 is_ "3", "what operator will satisfy this assertion"
 
 test "string literals", ->
   equals "frankenstein", "__", "quote types are interchangable, but must match."
