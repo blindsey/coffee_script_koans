@@ -4,10 +4,15 @@ test "if", ->
   isPositive = true  if 2 > 0
   equals isPositive, __, "what is the value of isPositive?"
 
+test "unless", ->
+  isNegative = false
+  isNegative = true unless 2 < 0
+  equals isNegative, __, "what is the value of isNegative?"
+
 test "for", ->
   counter = 10
   i = 1
-  
+
   while i <= 3
     counter = counter + i
     i++
@@ -17,7 +22,7 @@ test "for in", ->
   person = 
     name: "Amory Blaine"
     age: 102
-  
+
   result = ""
   for property_name of person
     result = result + property_name
