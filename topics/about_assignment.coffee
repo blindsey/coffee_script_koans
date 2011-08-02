@@ -3,6 +3,15 @@ test "local variables", ->
   temp = __
   equals 1, temp, "Assign a value to the variable temp"
 
-test "global variables", ->
-  temp = 1
-  equals temp, window.__, "global variables are assigned to the window object"
+test "existential operator", ->
+  isPositive = true
+  isPositive = false if temp?
+  equals isPositive, __, "What is the value of isPositive?"
+
+test "existential assignment", ->
+  speed ?= 75
+  equals speed, __, "What does speed equal?"
+
+test "existential ternary", ->
+  footprints = yeti ? 'bear'
+  equals footprints, __, "What does footprints equal?"
