@@ -231,7 +231,7 @@ var QUnit = {
 	/*
 	*	LIAM MCLENNAN - added an inverse for ok
 	*/
-	not: function(a, msg) {
+	not_ok: function(a, msg) {
 		msg = escapeHtml(msg);
 		QUnit.log(a, msg);
 		
