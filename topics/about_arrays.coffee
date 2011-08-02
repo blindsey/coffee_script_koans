@@ -12,6 +12,11 @@ test "length", ->
   collection = [ "a", "b", "c" ]
   equals collection.length, __, "what is the length of the collection array?"
 
+test "slice", ->
+  daysOfWeek = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]
+  weekend = daysOfWeek[__..__]
+  ok weekend.equalTo([ __ ]), "what is the value of weekend?"
+
 test "delete", ->
   daysOfWeek = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ]
   workingWeek = daysOfWeek.splice(__, __)
