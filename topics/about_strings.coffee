@@ -1,6 +1,6 @@
 module "About Strings (topics/about_strings.js)"
 test "delimiters", ->
-  singleQuotedString = "apple"
+  singleQuotedString = 'apple'
   doubleQuotedString = "apple"
   equals singleQuotedString == doubleQuotedString, __, "are the two strings equal?"
 
