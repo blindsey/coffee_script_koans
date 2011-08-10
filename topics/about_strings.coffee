@@ -14,7 +14,7 @@ test "character Type", ->
   equals characterType, __, "Javascript has no character type"
 
 test "escape character", ->
-  stringWithAnEscapedCharacter = "Apple"
+  stringWithAnEscapedCharacter = "\u0041pple"
   equals stringWithAnEscapedCharacter, __, "what  is the value of stringWithAnEscapedCharacter?"
 
 test "string.length", ->
