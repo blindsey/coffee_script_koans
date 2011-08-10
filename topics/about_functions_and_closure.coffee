@@ -1,8 +1,8 @@
 module "About Functions And Closure (topics/about_functions_and_closure.js)"
 test "assigning functions to variables", ->
+  result = "a"
   changeResult = ->
     result = "b"
-  result = "a"
   changeResult()
   equals result, __, "what is the value of result?"
 
@@ -24,6 +24,8 @@ test "arguments array", ->
     
     while i < arguments.length
       i++
+      # complete the implementation of this method so that it returns the sum of its arguments
+    # __
   
   equals add(1, 2, 3, 4, 5), 15, "add 1,2,3,4,5"
   equals add(4, 7, -2), 9, "add 1,2,3,4,5"
