@@ -1,16 +1,10 @@
 module "About Functions And Closure (topics/about_functions_and_closure.js)"
-test "defining functions directly", ->
+test "assigning functions to variables", ->
   changeResult = ->
     result = "b"
   result = "a"
   changeResult()
   equals result, __, "what is the value of result?"
-
-test "assigning functions to variables", ->
-  triple = (input) ->
-    input * 3
-  
-  equals triple(4), __, "what is triple 4?"
 
 test "self invoking functions", ->
   publicValue = "shared"
