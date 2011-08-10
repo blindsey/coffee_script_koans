@@ -1,5 +1,5 @@
 module "About Scope (topics/about_scope.js)"
-thisIsAGlobalVariable = 77
+window.thisIsAGlobalVariable = 77
 test "global variables", ->
   equals thisIsAGlobalVariable, __, "is thisIsAGlobalVariable defined in this scope?"
 
