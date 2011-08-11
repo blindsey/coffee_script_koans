@@ -22,6 +22,11 @@ test "delete", ->
   workingWeek = daysOfWeek.splice(__, __)
   ok workingWeek.equalTo([ __ ]), "what is the value of workingWeek?"
   ok daysOfWeek.equalTo([ __ ]), "what is the value of daysOfWeek?"
+  
+test "splice", ->
+  myNumbers = [10..20]
+  myNumbers[3..6] = [30..27]
+  ok myNumbers.equalTo(__), "what are my numbers now?"  
 
 test "stack methods", ->
   stack = []
