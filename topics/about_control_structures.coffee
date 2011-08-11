@@ -18,6 +18,13 @@ test "for", ->
     i++
   equals counter, __, "what is the value of counter?"
 
+test "until", ->
+  num = 1
+  double = -> num *= 2
+
+  double() until num > 1000
+  equals num, __, "what is the first power of 2 over 1000?"
+
 test "for in", ->
   person = 
     name: "Amory Blaine"
