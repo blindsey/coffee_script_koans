@@ -40,3 +40,9 @@ test "modulus", ->
   x = 5
   result %= x
   equals result, __, "What is the value of result?"
+  
+test "chained comparison", ->
+  cholesterol = 127
+
+  healthy = 200 > cholesterol > 60
+  equals healthy, __, "is a cholestor of 127 healthy?"
