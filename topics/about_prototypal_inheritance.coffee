@@ -1,35 +1,37 @@
-extend = (child, supertype) ->
-  child:: = supertype::
-Bat = (name, wingspan) ->
-  Mammal.call this, name
-  @wingspan = wingspan
 module "About Prototypal Inheritance (topics/about_prototypal_inheritance.js)"
-Mammal = (name) ->
-  @name = name
 
-Mammal:: = sayHi: ->
-  "Hello, my name is " + @name
+class Mammal
+  constructor: (@name) ->
+  sayHi: ->
+    "Hello, my name is " + @name
+  favouriteSaying: ->
+    @name + "'s favourite saying is " + @sayHi()
 
 test "defining a 'class'", ->
-  eric = new Mammal("Eric")
+  eric = new Mammal "Eric"
   equals eric.sayHi(), __, "what will Eric say?"
 
-Mammal::favouriteSaying = ->
-  @name + "'s favourite saying is " + @sayHi()
-
 test "more functions", ->
-  bobby = new Mammal("Bobby")
+  bobby = new Mammal "Bobby"
   equals bobby.favouriteSaying(), __, "what is Bobby's favourite saying?"
 
 test "calling functions added to a prototype after an object was created", ->
-  paul = new Mammal("Paul")
+  paul = new Mammal "Paul"
   Mammal::numberOfLettersInName = ->
     @name.length
   
   equals paul.numberOfLettersInName(), __, "how long is Paul's name?"
 
-extend Bat, Mammal
+class Bat extends Mammal 
+  constructor: (name, @wingspan) -> super name
+  favouriteSaying: ->
+    "Bats are very similar to other mammals: " + super()
+
 test "Inheritance", ->
   lenny = new Bat("Lenny", "1.5m")
   equals lenny.sayHi(), __, "what does Lenny say?"
   equals lenny.wingspan, __, "what is Lenny's wingspan?"
+  
+test "super", ->
+  lenny = new Bat("Lenny", "1.5m")
+  equals lenny.favouriteSaying(), __, "what is Lenny's favourite saying?"
