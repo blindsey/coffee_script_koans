@@ -28,6 +28,16 @@ test "for in", ->
     result = result + property_name
   equals result, __, "what is the value of result?"
 
+test "array comprehensions", ->
+  total = 0
+  
+  addToTotal = (val) ->
+    total += val
+
+  addToTotal val for val in [4, 3, -7, 2]
+  
+  equals total, __, "what is the sum of 4, 3, -7 and 2?"
+
 test "ternary operator", ->
   fruit = (if true then "apple" else "orange")
   equals fruit, __, "what is the value of fruit?"
