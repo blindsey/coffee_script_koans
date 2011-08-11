@@ -38,6 +38,13 @@ test "array comprehensions", ->
   
   equals total, __, "what is the sum of 4, 3, -7 and 2?"
 
+test "array comprehensions as a map", ->
+  square = (x) -> x * x
+
+  squares = (square val for val in [0, 1, 2, 3, 4, 5])
+  
+  equals squares[5], __, "what is 5 squared?"
+
 test "ternary operator", ->
   fruit = (if true then "apple" else "orange")
   equals fruit, __, "what is the value of fruit?"
