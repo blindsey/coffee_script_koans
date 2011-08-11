@@ -29,3 +29,13 @@ test "arguments array", ->
   
   equals add(1, 2, 3, 4, 5), 15, "add 1,2,3,4,5"
   equals add(4, 7, -2), 9, "add 1,2,3,4,5"
+  
+test "default parameter values", ->
+  message = "Brian eats apples"
+  
+  updateMessage = (name, food = "everything") ->
+    message = "#{name} eats #{food}"
+    
+  updateMessage "Henry"
+  
+  equals message, __, "what does Henry eat?"
