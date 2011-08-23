@@ -18,6 +18,13 @@ test "for", ->
     i++
   equals counter, __, "what is the value of counter?"
 
+test "until", ->
+  num = 1
+  double = -> num *= 2
+
+  double() until num > 1000
+  equals num, __, "what is the first power of 2 over 1000?"
+
 test "for in", ->
   person = 
     name: "Amory Blaine"
@@ -27,6 +34,24 @@ test "for in", ->
   for property_name of person
     result = result + property_name
   equals result, __, "what is the value of result?"
+
+test "array comprehensions", ->
+  total = 0
+  
+  addToTotal = (val) ->
+    total += val
+
+  addToTotal val for val in [4, 3, -7, 2]
+  
+  equals total, __, "what is the sum of 4, 3, -7 and 2?"
+
+test "array comprehensions as filter expressions", ->
+
+  square = (x) -> x * x
+
+  squaresFrom10 = (square val for val in [0..20] when val >= 10)
+  
+  equals squaresFrom10[5], __, "what is 15 squared?"
 
 test "ternary operator", ->
   fruit = (if true then "apple" else "orange")

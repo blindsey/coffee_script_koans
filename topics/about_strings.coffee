@@ -4,6 +4,14 @@ test "delimiters", ->
   doubleQuotedString = "apple"
   equals singleQuotedString == doubleQuotedString, __, "are the two strings equal?"
 
+test "multiline strings", ->
+  sentence = "is
+ this
+ a
+ valid
+ string?"
+  equals sentence == "is this a valid string?", __, "is this a valid string?"
+
 test "concatenation", ->
   fruit = "apple"
   dish = "pie"
